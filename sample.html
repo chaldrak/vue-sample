@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="sample.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            Nom：<input v-model="name">
+            Cours：<input v-model="course">
+            Période de cours :<input v-model="acceptancePeriod">
+            <br>
+            <button v-on:click="addStudent">Ajouter les étudiants entrés</button>
+            <ul>
+                <li v-for="student in students" v-bind:key="student.id">
+                    ID {{student.id}} /
+                    Nom {{student.name}} /
+                    Cours {{student.course}} /
+                    Période de cours {{student.acceptancePeriod}}
+                </li>
+            </ul>
+        </div>
+        <script src="sample.js"></script>
+    </body>
+</html>
